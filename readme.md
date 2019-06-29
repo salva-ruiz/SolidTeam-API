@@ -1,2 +1,2 @@
-# solid-team
-An API & web server for shared tasks 
+# SolidTeam-api
+An API for a shared task application
