@@ -63,5 +63,6 @@ typings/
 # Vim swap files
 *.swp
 
-# Passwrods
+# Config files with passwords
 db/config.json
+db/knexfile.js

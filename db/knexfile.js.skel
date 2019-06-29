@@ -1,0 +1,46 @@
+// Update with your config settings.
+
+module.exports = {
+
+  development: {
+    client: 'postgresql',
+    connection: {
+      database: 'solidteam_development',
+      user:     '',
+      password: ''
+    }
+  },
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'solidteam_staging',
+      user:     '',
+      password: ''
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'solidteam_production',
+      user:     '',
+      password: ''
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+
+};
