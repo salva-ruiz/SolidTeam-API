@@ -60,5 +60,8 @@ typings/
 # next.js build output
 .next
 
+# Vim swap files
+*.swp
+
 # Passwrods
 db/config.json
