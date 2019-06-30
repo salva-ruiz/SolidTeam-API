@@ -16,10 +16,10 @@ router
   /* GET an user */
   .get('/:id(\\d+)', function(req, res, next) {
     knex('users')
-      .select(['id', 'user_name', 'full_name', 'email_address', 'time_zone'])
       .where('id', req.params['id'])
+      .first(['id', 'user_name', 'full_name', 'email_address', 'time_zone'])
       .then(user => {
-        if (user.length)
+        if (user)
           res.json(user)
         else
           res.send(404)
