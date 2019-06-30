@@ -22,14 +22,14 @@ router
         if (user)
           res.json(user)
         else
-          res.send(404)
+          res.sendStatus(404)
       })
   })
 
   /* POST a new user */
   .post('/', function(req, res, next) {
     if (Array.isArray(req.body))
-      res.send(400)
+      res.sendStatus(400)
     else
       knex('users')
         .insert(req.body, ['id'])
@@ -37,7 +37,7 @@ router
           if (id)
             res.json(id)
           else
-            res.send(400)
+            res.sendStatus(400)
         })
   })
 
@@ -48,9 +48,9 @@ router
       .update(req.body, ['id'])
       .then(id => {
         if (id)
-          res.send(200)
+          res.sendStatus(200)
         else
-          res.send(404)
+          res.sendStatus(404)
       })
   })
 
@@ -61,9 +61,9 @@ router
       .delete()
       .then(count => {
         if (count)
-          res.send(200)
+          res.sendStatus(200)
         else
-          res.send(404)
+          res.sendStatus(404)
       })
   })
 
